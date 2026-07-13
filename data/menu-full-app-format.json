@@ -1,0 +1,335 @@
+{
+  "restaurant": {
+    "name": "Rumah Makan Cak Koting - Spesial Bebek Goreng",
+    "address": "Jl. Doktor Sutomo No.57, Bausasran, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55211",
+    "instagram": "@cakkoting",
+    "whatsapp": [
+      "0856-4757-2009",
+      "0856-2883-111"
+    ]
+  },
+  "categories": [
+    { "name": "Nasi", "displayOrder": 1 },
+    { "name": "Bebek", "displayOrder": 2 },
+    { "name": "Burung Dara", "displayOrder": 3 },
+    { "name": "Ayam", "displayOrder": 4 },
+    { "name": "Ayam Potong", "displayOrder": 5 },
+    { "name": "Sapi", "displayOrder": 6 },
+    { "name": "Soto", "displayOrder": 7 },
+    { "name": "Gurameh", "displayOrder": 8 },
+    { "name": "Nila", "displayOrder": 9 },
+    { "name": "Lele", "displayOrder": 10 },
+    { "name": "Lauk dan Sayuran", "displayOrder": 11 },
+    { "name": "Teh", "displayOrder": 12 },
+    { "name": "Jus Buah", "displayOrder": 13 },
+    { "name": "Jeruk", "displayOrder": 14 },
+    { "name": "Tape", "displayOrder": 15 },
+    { "name": "Cendol", "displayOrder": 16 },
+    { "name": "Kemasan", "displayOrder": 17 },
+    { "name": "Kopi, Susu, Dll", "displayOrder": 18 },
+    { "name": "Degan (Kelapa Muda)", "displayOrder": 19 }
+  ],
+  "menu": [
+    { "id": "nasi-putih", "category": "Nasi", "name": "Nasi Putih", "price": 6000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "nasi-uduk", "category": "Nasi", "name": "Nasi Uduk", "price": 8000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "nasi-bakar", "category": "Nasi", "name": "Nasi Bakar", "price": 12000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "nasi-merah", "category": "Nasi", "name": "Nasi Merah", "price": 12000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "bebek-goreng", "category": "Bebek", "name": "Bebek Goreng", "price": 27500, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "bebek-bakar", "category": "Bebek", "name": "Bebek Bakar", "price": 30000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "bebek-penyet", "category": "Bebek", "name": "Bebek Penyet", "price": 27500, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "burung-dara-goreng", "category": "Burung Dara", "name": "Burung Dara Goreng", "price": 33500, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "burung-dara-bakar", "category": "Burung Dara", "name": "Burung Dara Bakar", "price": 35500, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "ayam-goreng", "category": "Ayam", "name": "Ayam Goreng", "price": 25000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "ayam-bakar", "category": "Ayam", "name": "Ayam Bakar", "price": 27000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "ayam-potong-goreng", "category": "Ayam Potong", "name": "Ayam Potong Goreng", "price": 17000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "ayam-potong-bakar", "category": "Ayam Potong", "name": "Ayam Potong Bakar", "price": 19000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "ayam-potong-penyet", "category": "Ayam Potong", "name": "Ayam Potong Penyet", "price": 17000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Potongan", "required": true, "allowMultiple": false, "options": [
+        { "name": "Paha", "priceAdjustment": 0 },
+        { "name": "Dada", "priceAdjustment": 0 }
+      ]},
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "kepala-ayam", "category": "Ayam Potong", "name": "Kepala Ayam", "price": 9000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "ati-ampela", "category": "Ayam Potong", "name": "Ati Ampela", "price": 14000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "empal", "category": "Sapi", "name": "Empal", "price": 28000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "iga-bakar", "category": "Sapi", "name": "Iga Bakar", "price": 31000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "iso", "category": "Sapi", "name": "Iso", "price": 25000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "babat", "category": "Sapi", "name": "Babat", "price": 25000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "paru", "category": "Sapi", "name": "Paru", "price": 25000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "sop-iga", "category": "Soto", "name": "Sop Iga", "price": 32000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "soto-sulung-daging", "category": "Soto", "name": "Soto Sulung Daging", "price": 20000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "soto-sulung-campur", "category": "Soto", "name": "Soto Sulung Campur", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "gurameh-goreng", "category": "Gurameh", "name": "Gurameh Goreng", "price": 55000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "gurameh-bakar", "category": "Gurameh", "name": "Gurameh Bakar", "price": 60000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "nila-goreng", "category": "Nila", "name": "Nila Goreng", "price": 25000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "nila-bakar", "category": "Nila", "name": "Nila Bakar", "price": 30000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "lele-goreng", "category": "Lele", "name": "Lele Goreng", "price": 12725, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "lele-bakar", "category": "Lele", "name": "Lele Bakar", "price": 14500, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Sambal", "required": true, "allowMultiple": false, "options": [
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "oseng-daun-pepaya", "category": "Lauk dan Sayuran", "name": "Oseng Daun Pepaya", "price": 10000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "ca-kangkung", "category": "Lauk dan Sayuran", "name": "Ca Kangkung", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "ca-kangkung-cumi", "category": "Lauk dan Sayuran", "name": "Ca Kangkung Cumi", "price": 20000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "ca-kangkung-udang", "category": "Lauk dan Sayuran", "name": "Ca Kangkung Udang", "price": 20000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "pete-goreng", "category": "Lauk dan Sayuran", "name": "Pete Goreng", "price": 14000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "kol-goreng", "category": "Lauk dan Sayuran", "name": "Kol Goreng", "price": 9000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "telur", "category": "Lauk dan Sayuran", "name": "Telur", "price": 7000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Jenis", "required": true, "allowMultiple": false, "options": [
+        { "name": "Dadar", "priceAdjustment": 0 },
+        { "name": "Ceplok", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "tahutempe", "category": "Lauk dan Sayuran", "name": "Tahu/Tempe", "price": 4000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Jenis", "required": true, "allowMultiple": false, "options": [
+        { "name": "Goreng", "priceAdjustment": 0 },
+        { "name": "Penyet (3 biji)", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "terong-goreng", "category": "Lauk dan Sayuran", "name": "Terong Goreng", "price": 10000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "sambal-belut", "category": "Lauk dan Sayuran", "name": "Sambal Belut", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "sambal-terong", "category": "Lauk dan Sayuran", "name": "Sambal Terong", "price": 13000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "sambal", "category": "Lauk dan Sayuran", "name": "Sambal", "price": 4000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Jenis", "required": true, "allowMultiple": false, "options": [
+        { "name": "Bawang", "priceAdjustment": 0 },
+        { "name": "Ijo", "priceAdjustment": 0 },
+        { "name": "Terasi", "priceAdjustment": 0 },
+        { "name": "Matang", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "lalapan", "category": "Lauk dan Sayuran", "name": "Lalapan", "price": 3000, "desc": "Timun, kubis & kemangi", "isAvailable": true, "groups": [] },
+    { "id": "teh-tawar", "category": "Teh", "name": "Teh Tawar", "price": 4000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "teh-manis", "category": "Teh", "name": "Teh Manis", "price": 7500, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "teh-gula-batu", "category": "Teh", "name": "Teh Gula Batu", "price": 9000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "green-tea", "category": "Teh", "name": "Green Tea", "price": 16000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "lemon-tea", "category": "Teh", "name": "Lemon Tea", "price": 10000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "teh-tarik", "category": "Teh", "name": "Teh Tarik", "price": 10000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "jus-jambu", "category": "Jus Buah", "name": "Jus Jambu", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-jeruk", "category": "Jus Buah", "name": "Jus Jeruk", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-mangga", "category": "Jus Buah", "name": "Jus Mangga", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-melon", "category": "Jus Buah", "name": "Jus Melon", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-apel", "category": "Jus Buah", "name": "Jus Apel", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-timun", "category": "Jus Buah", "name": "Jus Timun", "price": 13000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-tomat", "category": "Jus Buah", "name": "Jus Tomat", "price": 13000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-stroberi", "category": "Jus Buah", "name": "Jus Stroberi", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-nangka", "category": "Jus Buah", "name": "Jus Nangka", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-alpukat", "category": "Jus Buah", "name": "Jus Alpukat", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-buah-naga", "category": "Jus Buah", "name": "Jus Buah Naga", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jus-sirsak", "category": "Jus Buah", "name": "Jus Sirsak", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "jeruk", "category": "Jeruk", "name": "Jeruk", "price": 10000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "jeruk-nipis", "category": "Jeruk", "name": "Jeruk Nipis", "price": 12000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "tape", "category": "Tape", "name": "Tape", "price": 10000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "tape-susu", "category": "Tape", "name": "Tape Susu", "price": 13000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "es-beras-kencur", "category": "Tape", "name": "Es Beras Kencur", "price": 10000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-original", "category": "Cendol", "name": "Cendol Original", "price": 13000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-durian", "category": "Cendol", "name": "Cendol Durian", "price": 20000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-lychee", "category": "Cendol", "name": "Cendol Lychee", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-bubblegum", "category": "Cendol", "name": "Cendol Bubblegum", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-greentea", "category": "Cendol", "name": "Cendol Greentea", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-red-velvet", "category": "Cendol", "name": "Cendol Red Velvet", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-klepon", "category": "Cendol", "name": "Cendol Klepon", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "cendol-tape", "category": "Cendol", "name": "Cendol Tape", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "air-mineral", "category": "Kemasan", "name": "Air Mineral", "price": 7000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "teh-botol-sosro", "category": "Kemasan", "name": "Teh Botol Sosro", "price": 6000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "fruit-tea", "category": "Kemasan", "name": "Fruit Tea", "price": 6000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "kopi", "category": "Kopi, Susu, Dll", "name": "Kopi", "price": 8000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "milo", "category": "Kopi, Susu, Dll", "name": "Milo", "price": 10000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "susu-putih", "category": "Kopi, Susu, Dll", "name": "Susu Putih", "price": 10000, "desc": "", "isAvailable": true, "groups": [
+      { "name": "Suhu", "required": true, "allowMultiple": false, "options": [
+        { "name": "Es", "priceAdjustment": 0 },
+        { "name": "Panas", "priceAdjustment": 0 }
+      ]}
+    ]},
+    { "id": "sekoteng", "category": "Kopi, Susu, Dll", "name": "Sekoteng", "price": 9000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "degan-utuh-original", "category": "Degan (Kelapa Muda)", "name": "Degan Utuh Original", "price": 15000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "degan-utuh-sirup", "category": "Degan (Kelapa Muda)", "name": "Degan Utuh Sirup", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "degan-utuh-gula-jawa", "category": "Degan (Kelapa Muda)", "name": "Degan Utuh Gula Jawa", "price": 18000, "desc": "", "isAvailable": true, "groups": [] },
+    { "id": "degan-utuh-susu", "category": "Degan (Kelapa Muda)", "name": "Degan Utuh Susu", "price": 20000, "desc": "", "isAvailable": true, "groups": [] }
+  ]
+}
