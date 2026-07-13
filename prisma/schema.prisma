@@ -1,0 +1,223 @@
+// This is your Prisma schema file
+// Learn more at: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  // Use direct connection for migrations (required for Supabase with pgBouncer)
+  directUrl = env("DIRECT_URL")
+}
+
+// ─────────────────────────────────────────
+// Restaurant Table (Meja)
+// ─────────────────────────────────────────
+model RestaurantTable {
+  id        String   @id @default(cuid())
+  number    Int      @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  orders    Order[]
+
+  @@map("restaurant_table")
+}
+
+// ─────────────────────────────────────────
+// Category (Kategori Menu)
+// ─────────────────────────────────────────
+model Category {
+  id           String   @id @default(cuid())
+  name         String   @unique
+  displayOrder Int
+  createdAt    DateTime @default(now())
+  menus        Menu[]
+
+  @@map("category")
+}
+
+// ─────────────────────────────────────────
+// Menu
+// ─────────────────────────────────────────
+model Menu {
+  id          String   @id  // slug: "bebek-goreng"
+  name        String
+  price       Int      // in IDR, stored as integer (no decimal needed)
+  desc        String   @default("")
+  isAvailable Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  groups     MenuOptionGroup[]
+  orderItems OrderItem[]
+
+  // Upselling / recommendations
+  recommendedBy   MenuRecommendation[] @relation("TargetMenu")
+  recommendations MenuRecommendation[] @relation("SourceMenu")
+
+  @@map("menu")
+}
+
+// ─────────────────────────────────────────
+// MenuOptionGroup (Grup Varian)
+// e.g. "Potongan", "Sambal", "Suhu"
+// ─────────────────────────────────────────
+model MenuOptionGroup {
+  id            String  @id @default(cuid())
+  name          String
+  required      Boolean @default(true)
+  allowMultiple Boolean @default(false)
+  displayOrder  Int     @default(0)
+
+  menuId String
+  menu   Menu   @relation(fields: [menuId], references: [id], onDelete: Cascade)
+
+  options MenuOption[]
+
+  @@unique([menuId, name])
+  @@map("menu_option_group")
+}
+
+// ─────────────────────────────────────────
+// MenuOption (Pilihan dalam grup)
+// e.g. "Paha", "Terasi", "Es"
+// ─────────────────────────────────────────
+model MenuOption {
+  id              String @id @default(cuid())
+  name            String
+  priceAdjustment Int    @default(0)
+
+  groupId String
+  group   MenuOptionGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@map("menu_option")
+}
+
+// ─────────────────────────────────────────
+// MenuRecommendation (Upselling)
+// "Cocok dengan..." pairing logic
+// ─────────────────────────────────────────
+model MenuRecommendation {
+  id           String @id @default(cuid())
+  sourceMenuId String
+  targetMenuId String
+
+  sourceMenu Menu @relation("SourceMenu", fields: [sourceMenuId], references: [id], onDelete: Cascade)
+  targetMenu Menu @relation("TargetMenu", fields: [targetMenuId], references: [id], onDelete: Cascade)
+
+  @@unique([sourceMenuId, targetMenuId])
+  // Prevent self-recommendation
+  @@map("menu_recommendation")
+}
+
+// ─────────────────────────────────────────
+// Order (Pesanan)
+// Status: pending → paid → processing → completed / cancelled
+// RULE: status hanya berubah ke 'paid' via webhook Midtrans
+// ─────────────────────────────────────────
+model Order {
+  id           String      @id @default(cuid())
+  customerName String      @default("")
+  status       OrderStatus @default(pending)
+  total        Int         // snapshot total harga saat order dibuat
+
+  // Midtrans Snap
+  snapToken       String?
+  snapRedirectUrl String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  tableId String
+  table   RestaurantTable @relation(fields: [tableId], references: [id])
+
+  items   OrderItem[]
+  payment Payment?
+
+  @@map("order")
+}
+
+enum OrderStatus {
+  pending
+  paid
+  processing
+  completed
+  cancelled
+}
+
+// ─────────────────────────────────────────
+// OrderItem (Item dalam pesanan)
+// RULE: priceAtOrder di-snapshot saat order dibuat, tidak boleh berubah
+// ─────────────────────────────────────────
+model OrderItem {
+  id           String @id @default(cuid())
+  name         String // snapshot nama menu saat order
+  qty          Int
+  priceAtOrder Int    // snapshot harga dasar menu saat order
+  note         String @default("")
+
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  menuId String
+  menu   Menu   @relation(fields: [menuId], references: [id])
+
+  options OrderItemOption[]
+
+  @@map("order_item")
+}
+
+// ─────────────────────────────────────────
+// OrderItemOption (Varian yang dipilih)
+// RULE: snapshot nama & harga adjustment, tidak boleh berubah
+// ─────────────────────────────────────────
+model OrderItemOption {
+  id              String @id @default(cuid())
+  groupName       String // snapshot
+  optionName      String // snapshot
+  priceAdjustment Int    // snapshot
+
+  orderItemId String
+  orderItem   OrderItem @relation(fields: [orderItemId], references: [id], onDelete: Cascade)
+
+  @@map("order_item_option")
+}
+
+// ─────────────────────────────────────────
+// Payment (Log transaksi Midtrans)
+// RULE: Payment.status hanya diupdate via webhook Midtrans
+// ─────────────────────────────────────────
+model Payment {
+  id              String        @id @default(cuid())
+  midtransOrderId String        @unique // sama dengan Order.id
+  status          PaymentStatus @default(pending)
+  grossAmount     Int
+  paymentType     String?
+  transactionId   String?
+  transactionTime DateTime?
+  rawNotification Json?         // simpan full payload webhook untuk audit
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orderId String @unique
+  order   Order  @relation(fields: [orderId], references: [id])
+
+  @@map("payment")
+}
+
+enum PaymentStatus {
+  pending
+  settlement
+  expire
+  cancel
+  deny
+  failure
+}
